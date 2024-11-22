@@ -17,6 +17,11 @@ URL=''
 PACKAGES = find_packages()
 REQUIRED = []
 
+# if requirements.txt exists, use it to populate the REQUIRED list
+if path.exists('./requirements.txt'):
+    with open('./requirements.txt') as f:
+        REQUIRED = f.read().splitlines()
+
 
 here = path.abspath(path.dirname(__file__))
 
