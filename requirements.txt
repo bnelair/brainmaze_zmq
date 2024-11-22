@@ -1,4 +1,3 @@
 zmq
-pytz
-tzlocal
 pythonping
+pytest
