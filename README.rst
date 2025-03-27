@@ -1,17 +1,26 @@
 
-BrainMaze: Brain Electrophysiology, Behavior and Dynamics Analysis Toolbox - EEG
+BrainMaze: Brain Electrophysiology, Behavior and Dynamics Analysis Toolbox - ZMQ
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 This toolbox provides tools for processing of intracranial EEG recordings. See below and documentation for specific sections. This tool was separated from the BrainMaze toolbox to support a convenient and lightweight sharing of these tools across projects.
 
 This project was originally developed as a part of the `BEhavioral STate Analysis Toolbox (BEST) <https://github.com/bnelair/best-toolbox>`_ project. However, the development has transferred to the BrainMaze project.
 
+brainmaze-zmq provides utility functions and tools for working with ZeroMQ, enabling efficient multiprocess communication. This library is designed to be lightweight, modular, and multiplatform.
+
+Features
+'''''''''''''
+
+- Easy-to-use utilities for setting up ZeroMQ sockets (PUSH, PULL, PUB, SUB, REQ, REP).
+- Support for scalable multiprocess communication.
+- Compatible with Python 3.9 and above.
+- Tested on Windows, macOS, and Linux.
 
 
 Documentation
 """""""""""""""
 
-Documentation is available `here <https://bnelair.github.io/brainmaze_eeg>`_.
+Documentation is available `here <https://bnelair.github.io/brainmaze_zmq>`_.
 
 
 Installation
@@ -19,7 +28,7 @@ Installation
 
 .. code-block:: bash
 
-    pip install brainmaze-utils
+    pip install brainmaze-zmq
 
 How to contribute
 """""""""""""""""""""""""""
@@ -45,7 +54,7 @@ If updating the docs web generated using sphinx, there might be a lot of changes
 License
 """"""""""""""""""
 
-This software is licensed under BSD-3Clause license. For details see the `LICENSE <https://github.com/bnelair/brainmaze_eeg/blob/master/LICENSE>`_ file in the root directory of this project.
+This software is licensed under BSD-3Clause license. For details see the `LICENSE <https://github.com/bnelair/brainmaze_zmq/blob/master/LICENSE>`_ file in the root directory of this project.
 
 
 Acknowledgment
