@@ -1,52 +1,67 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+# Copyright 2020-present, Mayo Clinic Department of Neurology
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
 
-"Setup for brainmaze-zmq "
+import os
 
-from os import path
+import setuptools
 
-from setuptools import find_packages, setup
 
 NAME='brainmaze-zmq'
-DESCRIPTION='Utils for around zmq supporting multiprocess communication'
+DESCRIPTION='BrainMaze: Brain Electrophysiology, Behavior and Dynamics Analysis Toolbox - ZeroMQ communication modules'
+LONG_DESCRIPTION=open('README.rst', encoding='utf-8').read()
 EMAIL='mivalt.filip@mayo.edu'
 AUTHOR='Filip Mivalt'
-VERSION='0.0.1'
 REQUIRES_PYTHON = '>=3.9.0'
-URL=''
-PACKAGES = find_packages()
-REQUIRED = []
+URL="https://github.com/bnelair/brainmaze_zmq"
+PACKAGES = setuptools.find_packages()
 
-# if requirements.txt exists, use it to populate the REQUIRED list
-if path.exists('./requirements.txt'):
-    with open('./requirements.txt') as f:
+REQUIRED = []
+# if requirements___.txt exists, use it to populate the REQUIRED list
+if os.path.exists('requirements.txt'):
+    with open('requirements.txt') as f:
         REQUIRED = f.read().splitlines()
 
 
-here = path.abspath(path.dirname(__file__))
-
-print(f'Installing {NAME}')
-
-setup(
+setuptools.setup(
     name=NAME,
-    version=VERSION,
+    use_scm_version=True,
+    setup_requires=['setuptools>=61', 'setuptools_scm'],
+
     description=DESCRIPTION,
     author=AUTHOR,
     author_email=EMAIL,
     url=URL,
-    install_requires=REQUIRED,
-    packages=PACKAGES,
-    python_requires=REQUIRES_PYTHON,
+    license="BSD-3-Clause",
+    long_description=LONG_DESCRIPTION,
+    long_description_content_type='text/x-rst',
+
+    packages=setuptools.find_packages(exclude=["tests*"]),
     include_package_data=True,
+
     classifiers=[
-        # https://pypi.python.org/pypi?%3Aaction=list_classifiers
+        'Topic :: Scientific/Engineering :: Medical Science Apps.',
+        "Development Status :: 3 - Alpha",
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
-        'Programming Language :: Python :: Implementation :: CPython',
-        'Operating System :: OS Independent'
-    ],
+        'Programming Language :: Python :: 3.12',
 
+        'Operating System :: OS Independent',
+        "License :: OSI Approved :: BSD License",
+        'Intended Audience :: Healthcare Industry',
+        'Intended Audience :: Science/Research',
+    ],
+    python_requires=REQUIRES_PYTHON,
+    install_requires =REQUIRED,
 )
+
+
+
+
+
+
