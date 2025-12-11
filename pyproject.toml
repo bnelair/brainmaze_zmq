@@ -1,0 +1,58 @@
+# Copyright 2020-present, Mayo Clinic Department of Neurology
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+[build-system]
+requires = ["setuptools>=61", "setuptools_scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "brainmaze-zmq"
+description = "BrainMaze: Brain Electrophysiology, Behavior and Dynamics Analysis Toolbox - ZeroMQ communication modules"
+readme = "README.rst"
+requires-python = ">=3.9.0"
+license = {text = "BSD-3-Clause"}
+authors = [
+    {name = "Filip Mivalt", email = "mivalt.filip@mayo.edu"}
+]
+classifiers = [
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: BSD License",
+    "Intended Audience :: Healthcare Industry",
+    "Intended Audience :: Science/Research",
+]
+dynamic = ["version"]
+dependencies = [
+    "pyzmq",
+    "pythonping",
+    "tornado",
+]
+
+[project.urls]
+Homepage = "https://github.com/bnelair/brainmaze_zmq"
+Documentation = "https://bnelair.github.io/brainmaze_zmq"
+Repository = "https://github.com/bnelair/brainmaze_zmq"
+"Bug Tracker" = "https://github.com/bnelair/brainmaze_zmq/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "sphinx>=7.0",
+    "sphinx_book_theme",
+]
+
+[tool.setuptools]
+packages = ["brainmaze_zmq"]
+
+[tool.setuptools_scm]
+# This enables version discovery from git tags

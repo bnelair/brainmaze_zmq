@@ -38,17 +38,22 @@ To implement a new feature a new branch should be created from the *dev* branch 
 After the feature is implemented, a pull request can be created to merge the feature branch into the *dev* branch with. Pull requests need to be reviewed by the code owners.
 Drafting of new releases will be performed by the code owners in using pull request from *dev* to *main* and drafting a new release on GitHub.
 
-New functions need to be implemented with Sphinx compatible docstrings. The documentation is automatically generated from the docstrings using Sphinx using make_docs.sh either calling its contents.
-Documentation source is in docs_src/ and the generated documentation is in docs/. .doctrees is not shared in the repository.
+New functions need to be implemented with Sphinx compatible docstrings. The documentation is automatically generated from the docstrings using Sphinx.
 
-Troubleshooting
-''''''''''''''''''''''''''''''
-
-If updating the docs web generated using sphinx, there might be a lot of changes resulting in a buffer hang up. Using SSH over HTTPS is preferred. If you are using HTTPS, you can increase the buffer size by running the following command:
+Documentation source files are in the ``docs_src/`` directory. The generated documentation outputs (``docs/`` directory) are not tracked in the repository. To build the documentation locally:
 
 .. code-block:: bash
 
-    git config http.postBuffer 524288000
+    # Install development dependencies
+    pip install -e ".[dev]"
+    
+    # Build documentation
+    bash make_docs.sh
+    
+    # Or use sphinx-build directly
+    sphinx-build -b html docs_src/source docs
+
+The generated HTML documentation will be in the ``docs/`` directory, which is excluded from version control via ``.gitignore``.
 
 
 License
