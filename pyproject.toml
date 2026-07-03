@@ -5,14 +5,14 @@
 # LICENSE file in the root directory of this source tree.
 
 [build-system]
-requires = ["setuptools>=61", "setuptools_scm>=8"]
+requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "brainmaze-zmq"
 description = "BrainMaze: Brain Electrophysiology, Behavior and Dynamics Analysis Toolbox - ZeroMQ communication modules"
 readme = "README.rst"
-requires-python = ">=3.9.0"
+requires-python = ">=3.10"
 license = {text = "BSD-3-Clause"}
 authors = [
     {name = "Filip Mivalt", email = "mivalt.filip@mayo.edu"}
@@ -22,7 +22,6 @@ classifiers = [
     "Development Status :: 3 - Alpha",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -31,7 +30,7 @@ classifiers = [
     "Intended Audience :: Healthcare Industry",
     "Intended Audience :: Science/Research",
 ]
-dynamic = ["version"]
+version = "0.0.1"
 dependencies = [
     "pyzmq",
     "pythonping",
@@ -39,13 +38,13 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/bnelair/brainmaze_zmq"
-Documentation = "https://bnelair.github.io/brainmaze_zmq"
-Repository = "https://github.com/bnelair/brainmaze_zmq"
-"Bug Tracker" = "https://github.com/bnelair/brainmaze_zmq/issues"
+Homepage = "https://github.com/bnelair/brainmaze-zmq"
+Documentation = "https://bnelair.github.io/brainmaze-zmq"
+Repository = "https://github.com/bnelair/brainmaze-zmq"
+"Bug Tracker" = "https://github.com/bnelair/brainmaze-zmq/issues"
 
 [project.optional-dependencies]
-dev = [
+test = [
     "pytest",
     "sphinx>=7.0",
     "sphinx_book_theme",
@@ -53,6 +52,3 @@ dev = [
 
 [tool.setuptools]
 packages = ["brainmaze_zmq"]
-
-[tool.setuptools_scm]
-# This enables version discovery from git tags
